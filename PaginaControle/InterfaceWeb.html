@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>.:: Balança IoT - NodeMCU, ThingSpeak e MQTT ::.</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script type='text/javascript' src='mosquitto.js'></script>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	<center>
+	<table border ="0" width="100%">
+		</tr>
+			<td bgcolor = "#3D3D3F" width="30%">
+				<center><img src="balancaiot.png" height="50%" width="50%"></center>
+			</td>
+			<td bgcolor = "#3D3D3F" width="70%">
+				<center><font color =white><h1>Balança IoT - NodeMCU, ThingSpeak e MQTT</h1><br>
+				Autor: Pedro Bertoleti</font>
+				</center>
+			</td>
+		</tr>		
+	</table>
+	
+<div id="broker">
+	<font color="#3D3D3F">Conectar-se ao servidor / broker:</font><br><br>
+	<input class="but" id="connect-button" type="button" value="Conectar">
+	<input class="but" id="disconnect-button" type="button" value="Desconectar">
+</div>
+<br><br>
+<font color="#3D3D3F">Comandos para a balança:</font><br><br>
+<input class="but" id="botao-pesagem" type="button"    value="Pesagem virtual"><br><br>
+Valor/kg: R$<input type="text" id="preco-por-kg" value=""> <input class="but" id="botao-preco-por-kg" type="button"  value="Enviar"><br><br>
+Tempo de funcionamento demonstração): <input type="text" id="tempo_fucionamento_demonstracao" value=""> segundo(s) <input class="but" id="botao-tempo-funcionamento-demonstracao" type="button"  value="Enviar"><br><br><br><br>
+
+
+<p><font color="#3D3D3F"><b>Balança remota:</b></font></p>
+<div id="status_io"></div>
+
+<br><br><br>
+<table border=0 width=100%>
+    <tr>
+        <td><center>Histórico de funcionamento<br><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/362912/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe></center></td>
+        <td><center>Histórico de pesagens confirmadas<br><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/359855/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe></center></td>
+        <td><center>Histórico de valor arrecadado<br><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/359855/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe></center></td>
+    </tr>
+</table>
+
+<p><b>Status de conexão ao servidor:</b></p>
+<div id="debug"></div>
+    
+	<script src="tmo.js" type="text/javascript"></script>
+	</center>
+</body>
+</html>
